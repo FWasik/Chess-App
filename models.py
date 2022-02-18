@@ -183,29 +183,15 @@ class Knight(Figure):
 
         self.get_position()
 
-        if self.index_row - 1 > -1 and self.index_column - 2 > -1:
-            moves.append(board[self.index_row - 1][self.index_column - 2])
+        values_1: list = [2, 1, -1, -2, -2, -1, 1, 2]
+        values_2: list = [1, 2, 2, 1, -1, -2, -2, -1]
 
-        if self.index_row + 1 < 8 and self.index_column - 2 > -1:
-            moves.append(board[self.index_row + 1][self.index_column - 2])
+        for i in range(8):
+            x = self.index_row + values_1[i]
+            y = self.index_column + values_2[i]
 
-        if self.index_row - 2 > -1 and self.index_column - 1 > -1:
-            moves.append(board[self.index_row - 2][self.index_column - 1])
-
-        if self.index_row - 2 > -1 and self.index_column + 1 < 8:
-            moves.append(board[self.index_row - 2][self.index_column + 1])
-
-        if self.index_row - 1 > -1 and self.index_column + 2 < 8:
-            moves.append(board[self.index_row - 1][self.index_column + 2])
-
-        if self.index_row + 1 < 8 and self.index_column + 2 < 8:
-            moves.append(board[self.index_row + 1][self.index_column + 2])
-
-        if self.index_row + 2 < 8 and self.index_column - 1 > -1:
-            moves.append(board[self.index_row + 2][self.index_column - 1])
-
-        if self.index_row + 2 < 8 and self.index_column + 1 < 8:
-            moves.append(board[self.index_row + 2][self.index_column + 1])
+            if x >= 0 and y >= 0 and x < 8 and y < 8:
+                moves.append(board[x][y])
 
         return moves
 
