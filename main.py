@@ -345,7 +345,7 @@ class PawnAPIMoves(Resource):
             data: dict = {
                 "availableMoves": obj.list_available_moves(key=version),
                 "error": None,
-                "figure": "king",
+                "figure": "pawn",
                 "currentField": current_field,
             }
 
@@ -355,7 +355,7 @@ class PawnAPIMoves(Resource):
             data: dict = {
                 "available": [],
                 "error": "Field does not exists",
-                "figure": "king",
+                "figure": "pawn",
                 "currentField": current_field,
             }
 

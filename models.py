@@ -206,19 +206,26 @@ class Pawn(Figure):
         # jeśli v1, pionek moze przesuwać się tylko do dołu
         # jeśli v2, pionek moze przesuwać sie tylko do góry
         # na dodatek, pionek nie moze znajdować się w ostatnim rzędzie,
-        # wtedy zmieniana jest figura
-        if version["key"] == "v1":
-            if self.index_row + 1 < 8:
+
+        # jeśli pionek znajduje się w rzędzie 2 lub 7 (w zależności od wersji)
+        # możliwy ruch o dwa pola
+        if version["key"] == "v1" and self.index_row != 0:
+            if self.index_row == 1:
+                moves.append(board[self.index_row + 2][self.index_column])
+
+            elif self.index_row + 1 < 7:
                 moves.append(board[self.index_row + 1][self.index_column])
 
-        if version["key"] == "v2":
-            if self.index_row - 1 > -1:
+        elif version["key"] == "v2" and self.index_row != 7:
+            if self.index_row == 6:
+                moves.append(board[self.index_row - 2][self.index_column])
+
+            elif self.index_row - 1 > -1:
                 moves.append(board[self.index_row - 1][self.index_column])
 
         return moves
 
     def validate_move(self, dest_field: str, **version: str) -> bool:
-        # print(version)
         available_moves: list = self.list_available_moves(key=version["key"])
 
         if dest_field in available_moves:
