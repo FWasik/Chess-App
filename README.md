@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Usage](#usage)
 
 ## General info
 Simple application for chess players to list available moves and validate them. App was created with Flask, 
