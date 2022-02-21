@@ -5,7 +5,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 
-##General info
+## General info
 Simple application for chess players to list available moves and validate them. App was created with Flask, 
 Flask-RESTful. Application was also dockerized and deployed via Heroku platform. In order to test app, PyTest was 
 used. Also libraries like Black and Flake8 was used to check coding style.
@@ -19,7 +19,7 @@ used. Also libraries like Black and Flake8 was used to check coding style.
 * Heroku platform
 
 
-##Setup
+## Setup
 First of all, it is needed to install Python. To install it, visit this site:
 https://www.python.org/downloads/
 
@@ -42,13 +42,13 @@ pytest
 
 
 
-###Standard run
+### Standard run
 Running application:
 ```
 py main.py 
 ```
 
-###Docker build and run (example)
+### Docker build and run (example)
 To install Docker, visit: https://www.docker.com/       
 Build:
 ```
@@ -61,7 +61,7 @@ docker run -it -p 5000:5000 chess-app
 ```
 
 
-##Usage
+## Usage
 To use app, you need to enter a specific URL address. The pattern to list possible 
 move is:
 ```
