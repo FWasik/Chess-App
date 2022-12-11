@@ -84,12 +84,3 @@ If there is not given field or there is not such URL, proper response appears.
 
 The version field in the URL address defines in which direction the pawn can move. If it is v1 the pawn 
 can move "down", if v2 the pawn can move "up".
-
-You can also use application via Heroku platform on this site:  
-http://chess-helper-app.herokuapp.com/
-
-404 appears if you enter site. Build proper URL address to test app e.g.
-```
-https://chess-helper-app.herokuapp.com/api/v1/king/a2
-https://chess-helper-app.herokuapp.com/api/v1/king/a2/a3
-```
